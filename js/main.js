@@ -1,59 +1,82 @@
-$(document).ready(function() {
-	// Header Scroll
-	$(window).on('scroll', function() {
-		var scroll = $(window).scrollTop();
+// scrolling
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-		if (scroll >= 50) {
-			$('.navbar').addClass('fixed');
-		} else {
-			$('.navbar').removeClass('fixed');
-		}
-	});
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
-// Owl Carousel
-	
-      $("#owl-demo").owlCarousel({
-		  autoPlay : true,
-        pagination: false,
-		navigation : false
-		
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
       });
+    } // End if
+  });
+});
 
-	// Fancybox
-	$('.work-box').fancybox();
 
-	// Page Scroll
-	var sections = $('section')
-		nav = $('nav[role="navigation"]');
 
-	$(window).on('scroll', function () {
-	  	var cur_pos = $(this).scrollTop();
-	  	sections.each(function() {
-	    	var top = $(this).offset().top - 76
-	        	bottom = top + $(this).outerHeight();
-	    	if (cur_pos >= top && cur_pos <= bottom) {
-	      		nav.find('a').removeClass('active');
-	      		nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
-	    	}
-	  	});
-	});
-	nav.find('a').on('click', function () {
-	  	var $el = $(this)
-	    	id = $el.attr('href');
-		$('html, body').animate({
-			scrollTop: $(id).offset().top - 75
-		}, 500);
-	  return false;
-	});
+// header animate
+$(function(){
+ var shrinkHeader = 100;
+  $(window).scroll(function() {
+    var scroll = getCurrentScroll();
+      if ( scroll >= shrinkHeader ) {
+           $('#header').addClass('fixed');
+        }
+        else {
+            $('#header').removeClass('fixed');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
+});
+
+
+// menu icon change
+// function myFunction(x) {
+//     x.classList.toggle("change");
+// }
+
+function navFunction() {
+    var x = document.getElementById("navigation");
+    if (x.className === "navigation") {
+        x.className += " open";
+    } else {
+        x.className = "navigation";
+    }
+
+    var y = document.querySelector(".nav-toggle");
+    y.classList.toggle("change");
+}
+
+
+
+
+
+
+
+
 
 	// Mobile Navigation
-	$('.nav-toggle').on('click', function() {
-		$(this).toggleClass('close-nav');
-		nav.toggleClass('open');
-		return false;
-	});	
-	nav.find('a').on('click', function() {
-		$('.nav-toggle').toggleClass('close-nav');
-		nav.toggleClass('open');
-	});
-});
+	// $('.nav-toggle').on('click', function() {
+	// 	let x = documen.getElementsByTagName("nav");
+	// 	$(this).toggleClass('change');
+	// 	x.toggleClass('open');
+	// 	return false;
+	// });	
+	// nav.find('a').on('click', function() {
+	// 	$('.nav-toggle').toggleClass('change');
+	// 	nav.toggleClass('open');
+	// });

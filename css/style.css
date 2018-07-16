@@ -6,6 +6,11 @@ body {
   color: #6c7279;
 }
 
+* {
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
 h1 {
   font-size: 43px;
   color: #2d3033;
@@ -33,17 +38,19 @@ h5 {
   font-weight: 700;
 }
 
-.section {
-  padding: 100px 0;
+a,
+a:hover {
+  text-decoration: none;
 }
 
-ul li {
-  list-style: none;
+.section {
+  padding: 100px 0;
 }
 
 ul,li {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .img-responsive {
@@ -73,47 +80,65 @@ ul,li {
   color:#000;
 }
 
-#banner2 {
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: block;
+}
+
+.youtube {
+  max-width: 100%;
+}
+/*bases*/
+
+/*header*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100000;
+}
+
+.header-content {
+  border-bottom: 0;
+  padding: 20px 0;
+  transition: all 0.5s;
+}
+
+#header.fixed {
+    background-color: rgb(32, 31, 34);
+}
+
+#header.fixed .header-content {
+    border-bottom: 0px;
+    padding: 7px 0px;
+}
+
+.logo {
+  float: left;
+}
+
+.navigation {
+  float: right;
+  padding: 23px 0;
+}
+
+.banner {
   background-color: #3b3be8;
   min-height: 750px;
 }
 
-.nav-link {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 12px;
-  font-weight: 400;
-  margin-left: 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 
-.nav-link:hover {
-  color: #fff !important;
-}
-
-.navbar.fixed {
-  background-color: #201f22;
-  transition: all 0.5s;
-}
-
-#header.fixed .nav-toggle {
+.navbar.fixed .nav-toggle {
   top: 18px;
 }
-.navigation.open {
-  opacity: 0.9;
-  visibility: visible;
-  -moz-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
-.navigation {
-  float: right;
-  padding: 20px 0;
-}
+
 .navigation li {
   display: inline-block;
 }
+
 .navigation a {
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
@@ -125,167 +150,27 @@ ul,li {
 .navigation a:hover, .navigation a.active {
   color: #fff;
 }
-.nav-toggle {
-  display: none;
-  height: 44px;
-  overflow: hidden;
-  position: fixed;
-  right: 5%;
-  text-indent: 100%;
-  top: 32px;
-  white-space: nowrap;
-  width: 44px;
-  z-index: 99999;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.nav-toggle:before, .nav-toggle:after {
-  border-radius: 50%;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-}
-.nav-toggle:before {
-  background-color: #e84545;
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-.nav-toggle:after {
-  background-color: #e84545;
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
-  -webkit-transition-duration: 0s;
-  transition-duration: 0s;
-}
-.nav-toggle span {
-  background-color: #fff;
-  bottom: auto;
-  display: inline-block;
-  height: 3px;
-  left: 50%;
-  position: absolute;
-  right: auto;
-  top: 50%;
-  width: 18px;
-  z-index: 10;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-.nav-toggle span:before, .nav-toggle span:after {
-  background-color: #fff;
-  content: "";
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-}
-.nav-toggle span:before {
-  -moz-transform: translateY(-6px) rotate(0deg);
-  -ms-transform: translateY(-6px) rotate(0deg);
-  -webkit-transform: translateY(-6px) rotate(0deg);
-  transform: translateY(-6px) rotate(0deg);
-}
-.nav-toggle span:after {
-  -moz-transform: translateY(6px) rotate(0deg);
-  -ms-transform: translateY(6px) rotate(0deg);
-  -webkit-transform: translateY(6px) rotate(0deg);
-  transform: translateY(6px) rotate(0deg);
-}
-.nav-toggle.close-nav:before {
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-.nav-toggle.close-nav:after {
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.nav-toggle.close-nav span {
-  background-color: rgba(255, 255, 255, 0);
-}
-.nav-toggle.close-nav span:before, .nav-toggle.close-nav span:after {
-  background-color: #fff;
-}
-.nav-toggle.close-nav span:before {
-  -moz-transform: translateY(0) rotate(45deg);
-  -ms-transform: translateY(0) rotate(45deg);
-  -webkit-transform: translateY(0) rotate(45deg);
-  transform: translateY(0) rotate(45deg);
-}
-.nav-toggle.close-nav span:after {
-  -moz-transform: translateY(0) rotate(-45deg);
-  -ms-transform: translateY(0) rotate(-45deg);
-  -webkit-transform: translateY(0) rotate(-45deg);
-  transform: translateY(0) rotate(-45deg);
-}
-
-.youtube {
-  max-width: 100%;
-}
 
 .banner-img {
   bottom: -186px;
   position: relative;
 }
 
-#banner2 .banner-text {
+.banner2 .banner-text {
   padding-top: 35%;
 }
 
-#banner2 .banner-text h1 {
+.banner2 .banner-text h1 {
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   line-height: 48px;
   margin-bottom: 5%;
 }
-#banner2 .banner-text span {
+.banner2 .banner-text span {
   font-weight: 300;
 }
-#banner2 .banner-text p {
+.banner2 .banner-text p {
   color: #fff;
   font-size: 16px;
   font-weight: 300;
@@ -299,6 +184,8 @@ ul,li {
   margin-right: 15px;
   display:inline-block
 }
+/*header*/
+
 
 .video > p {
   margin:5% 0% 12% 0%;

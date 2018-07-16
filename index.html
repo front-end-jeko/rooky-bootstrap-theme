@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Stylish Portfolio - Start Bootstrap Template</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -11,55 +11,39 @@
   <link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<body id="news">
+<body id="home">
 
 
 <!-- header -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top header-content clearfix">
-  <div class="container">
-    <a href="#" class="navbar-brand"><img src="img/logo.png" alt=""></a>
-    <button type="button" class="navbar-toggler" data-toggler="collapse" data-target="#menu">
-      <span class="navbar-toggle-icon"></span>
-    </button>
+<section class="banner">
+  <header id="header">
+    <div class="header-content container clearfix">
+      <a href="#home" class="logo"><img src="img/logo.png"></a>
 
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto text-uppercase">
-        <li class="nav-item">
-          <a href="#news" class="nav-link">Home</a>
-        </li>
-
-         <li class="nav-item">
-          <a href="#video" class="nav-link">Overview</a>
-        </li>
-
-         <li class="nav-item">
-          <a href="#features" class="nav-link">Features</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="#footer" class="nav-link">Screenshots</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="#download" class="nav-link">Download</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
-        </li>
-      </ul>
+      <nav class="navigation" id="navigation">
+        <ul class="primary-nav">
+          <li><a href="#home">home</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#download">Download</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle clearfix" onclick="navFunction()">
+         <div class="bar1"></div>
+         <div class="bar2"></div>
+         <div class="bar3"></div>
+      </a>
     </div>
-  </div>
-</nav>
+  </header>
 
-
-<header id="banner2">
-  <div class="container">
+  <div class="banner2 container">
     <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 col-sm-12">
       <img class="banner-img img-responsive" src="img/app-screen.png">
       </div> 
-      <div class="col-md-7 col-sm-12 text-white">
+      <div class="col-md-7 col-sm-12 text-white text-center">
         <div class="banner-text">
         <h1>Beautiful and Elegant App Landing Page for <span>Startup</span> business</h1>
         <p>Amazing, clean and modern landing page template for showcase your mobile application to the world. Best Start Up For Your New App.</p>
@@ -67,8 +51,10 @@
       </div>
      </div>
  </div>
- </div>
-</header>
+</div>
+</section>
+
+
 
 
 <section id="video" class="video section">
@@ -267,8 +253,7 @@ class="youtube" src="http://www.youtube.com/embed/k32xyP3KuWE?autoplay=0" frameb
           <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
           <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
         </ul>
-        
-
+  
         <p>© Copyright © 2015 Rooky Inc. All Rights Reserved. Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p>
     </div>
     </div>
@@ -277,17 +262,10 @@ class="youtube" src="http://www.youtube.com/embed/k32xyP3KuWE?autoplay=0" frameb
 
 
 
-
-
  <!-- SCRIPTS -->
     <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script src="js/stylish-portfolio.min.js"></script>
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script>
-<script src="js/jquery.contact.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
