@@ -318,14 +318,31 @@ ul,li {
   padding-bottom:0;
 }
 
-.section-title {
-  margin-top: 0;
-  letter-spacing:2px;
+
+/*slider section*/
+.top-slider-section {
+  letter-spacing: 2px;
 }
 
+.top-slider-section h1 {
+  font-size: 30px;
+  color: #6c7279;
+  font-weight: 300;
+}
+
+.top-slider-section span {
+  color: #000;
+  font-weight: 600;
+}
+
+
+/*items*/
 #owl-demo .item {
   text-align:center;
 }
+
+
+/*slider section*/
 
 .subscribe {
   background: url(../img/parallax-bg.jpg) center center;

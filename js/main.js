@@ -44,10 +44,7 @@ function getCurrentScroll() {
 });
 
 
-// menu icon change
-// function myFunction(x) {
-//     x.classList.toggle("change");
-// }
+
 
 function navFunction() {
     var x = document.getElementById("navigation");
@@ -62,21 +59,11 @@ function navFunction() {
 }
 
 
-
-
-
-
-
-
-
-	// Mobile Navigation
-	// $('.nav-toggle').on('click', function() {
-	// 	let x = documen.getElementsByTagName("nav");
-	// 	$(this).toggleClass('change');
-	// 	x.toggleClass('open');
-	// 	return false;
-	// });	
-	// nav.find('a').on('click', function() {
-	// 	$('.nav-toggle').toggleClass('change');
-	// 	nav.toggleClass('open');
-	// });
+// Owl Carousel
+	
+      $("#owl-demo").owlCarousel({
+		  autoPlay : true,
+        pagination: false,
+		navigation : false
+		
+      });
